@@ -1,8 +1,15 @@
+import TextInput from "./components/TextInput";
 
 function App() {
   return (
     <div>
-      <h1>Oi ;)</h1>
+      <form>        
+        <h2>Preencha os dados para criar o card do colaborador</h2>
+
+        <TextInput label="Nome" placeholder="Digite seu nome" />
+        <TextInput label="Cargo" placeholder="Digite seu cargo" />
+        <TextInput label="Imagem" placeholder="Digite o endereço da imagem" />
+      </form>
     </div>
   );
 }
