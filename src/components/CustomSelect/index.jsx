@@ -1,12 +1,18 @@
 import './CustomSelect.css';
 
 const CustomSelect = (props) => {
+
+    const onSelectChange = (event) => {
+        props.changeSelect(event.currentTarget.value);
+    }
+
     return (
         <div className='select-input'>
             <label>{ props.label }</label>
-            <select>
+            <select onChange={onSelectChange} value={props.value}>
+                <option value="" disabled>Selecione</option>
                 {props.options.map((opcao) => {
-                    return <option key={opcao.key}>{ opcao.value }</option>
+                    return <option value={opcao.key} key={opcao.key}>{ opcao.value }</option>
                 })}
             </select>
         </div>
