@@ -5,20 +5,12 @@ import CustomButton from '../CustomButton';
 import { useState } from 'react';
 
 const CustomForm = (props) => {
-    
-    const arrayTimes = [
-        { key: 'A', value: 'Programação' },
-        { key: 'B', value: 'Front-End' },
-        { key: 'C', value: 'Data Science' },
-        { key: 'D', value: 'Devops' },
-        { key: 'E', value: 'UX e Design' },
-        { key: 'F', value: 'Programação' },
-        { key: 'G', value: 'Mobile' },
-        { key: 'H', value: 'Inovação e Gestão' }
-    ];
 
     const onSubmitForm = (event) => {
         event.preventDefault();
+        props.cadastrarUsuario({
+            nomeValue, cargoValue, imagemValue, timeValue
+        })
         console.log('valorCamposForm', nomeValue, cargoValue, imagemValue, timeValue);
     }
 
@@ -54,7 +46,7 @@ const CustomForm = (props) => {
                 <CustomSelect 
                     value={timeValue}
                     label="Times" 
-                    options={arrayTimes} 
+                    options={props.arrayTimes} 
                     changeSelect={value => setTime(value)}
                 />
                 <CustomButton> Criar card </CustomButton>

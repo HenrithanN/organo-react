@@ -9,10 +9,10 @@ const CustomSelect = (props) => {
     return (
         <div className='select-input'>
             <label>{ props.label }</label>
-            <select onChange={onSelectChange} value={props.value}>
+            <select onChange={onSelectChange} value={props.options.nome}>
                 <option value="" disabled>Selecione</option>
                 {props.options.map((opcao) => {
-                    return <option value={opcao.key} key={opcao.key}>{ opcao.value }</option>
+                    return <option value={opcao.key} key={opcao.key}>{ opcao.nome }</option>
                 })}
             </select>
         </div>
