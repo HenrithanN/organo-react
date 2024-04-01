@@ -1,4 +1,5 @@
 import './Time.css';
+import CustomCard from '../CustomCard'
 
 const Time = (props) => {
     console.log('propsprops', props)
@@ -7,6 +8,7 @@ const Time = (props) => {
     return (
         <section className='time' style={css}>
             <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
+            <CustomCard />
         </section>
     )
 }
