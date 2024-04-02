@@ -1,16 +1,19 @@
 import './CustomCard.css';
 
 const CustomCard = (props) => {
+    const ulImagem = props.imagem.includes('http') ? props.imagem : `https://github.com/${props.imagem}.png`
     return (
-        <div className='customCard'>
-            <div className='cabecalho'>
-                <img src='https://github.com/henrithanN.png' alt='foto de perfil'/>
+            <div className='customCard'>
+                <div className='cabecalho'>
+                    <img src={ ulImagem } alt='foto de perfil'/>
+                </div>
+                <div className='rodape'>
+                    <h4>{ props.nome }</h4>
+                    <h5>{ props.cargo }</h5>
+                </div>
             </div>
-            <div className='rodape'>
-                <h4>Jonathan Lima</h4>
-                <h5>FrontEnd</h5>
-            </div>
-        </div>
+        :
+            ''
     )
 }
 
