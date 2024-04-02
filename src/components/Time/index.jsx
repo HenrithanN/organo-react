@@ -18,6 +18,7 @@ const Time = (props) => {
                         cargo={usuario.cargoValue} 
                         imagem={usuario.imagemValue} 
                         time={usuario.timeValue} 
+                        key={usuario.nomeValue + listaUsuarios.length}
                 />)}
                 </div>
             </section>

@@ -10,13 +10,22 @@ const CustomForm = (props) => {
         event.preventDefault();
         props.cadastrarUsuario({
             nomeValue, cargoValue, imagemValue, timeValue
-        })
+        });
+
+        limparCamposFormulario();
+    }
+
+    const limparCamposFormulario = () => {
+        setNome('');
+        setCargo('');
+        setImagem('');
+        setTime('');
     }
 
     const [ nomeValue, setNome ] = useState('');
     const [ cargoValue, setCargo ] = useState('');
     const [ imagemValue, setImagem ] = useState('');
-    const [ timeValue, setTime ] = useState('A');
+    const [ timeValue, setTime ] = useState('');
 
 
     return (
