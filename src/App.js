@@ -30,6 +30,7 @@ function App() {
           corPrimaria={time.corPrimaria}
           corSecundaria={time.corSecundaria}
           key={time.key}
+          usuarios={usuariosValue.filter(usuario => usuario.timeValue === time.key)}
           >
         </Time>) 
       }
