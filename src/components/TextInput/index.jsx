@@ -1,19 +1,19 @@
 import './TextInput.css'
 
-const TextInput = (props) => {
+const TextInput = ({placeholder, label, value, changeInput}) => {
 
-    const placeholderModificada = `${props.placeholder}...`;
+    const placeholderModificada = `${placeholder}...`;
 
     const onKeyUpInput = (event) => {
-        props.changeInput(event.currentTarget.value);
+        changeInput(event.currentTarget.value);
     }
 
     return (
         <div className="text-input">
             <label>
-                {props.label}
+                {label}
             </label>
-            <input value={props.value} onChange={onKeyUpInput} placeholder={placeholderModificada}/>
+            <input value={value} onChange={onKeyUpInput} placeholder={placeholderModificada}/>
         </div>
     )
 }

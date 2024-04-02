@@ -1,15 +1,15 @@
 import './CustomCard.css';
 
-const CustomCard = (props) => {
-    const ulImagem = props.imagem.includes('http') ? props.imagem : `https://github.com/${props.imagem}.png`;
+const CustomCard = ({imagem, corFundo, nome, cargo}) => {
+    const ulImagem = imagem.includes('http') ? imagem : `https://github.com/${imagem}.png`;
     return (
             <div className='customCard'>
-                <div className='cabecalho' style={{backgroundColor: props.corFundo}}>
+                <div className='cabecalho' style={{backgroundColor: corFundo}}>
                     <img src={ ulImagem } alt='foto de perfil'/>
                 </div>
                 <div className='rodape'>
-                    <h4>{ props.nome }</h4>
-                    <h5>{ props.cargo }</h5>
+                    <h4>{ nome }</h4>
+                    <h5>{ cargo }</h5>
                 </div>
             </div>
     )

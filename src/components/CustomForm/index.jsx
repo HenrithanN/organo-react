@@ -4,11 +4,11 @@ import CustomSelect from '../CustomSelect';
 import CustomButton from '../CustomButton';
 import { useState } from 'react';
 
-const CustomForm = (props) => {
+const CustomForm = ({cadastrarUsuario, arrayTimes}) => {
 
     const onSubmitForm = (event) => {
         event.preventDefault();
-        props.cadastrarUsuario({
+        cadastrarUsuario({
             nomeValue, cargoValue, imagemValue, timeValue
         });
 
@@ -54,7 +54,7 @@ const CustomForm = (props) => {
                 <CustomSelect 
                     value={timeValue}
                     label="Times" 
-                    options={props.arrayTimes} 
+                    options={arrayTimes} 
                     changeSelect={value => setTime(value)}
                 />
                 <CustomButton> Criar card </CustomButton>

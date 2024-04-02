@@ -1,9 +1,9 @@
 import './CustomButton.css';
 
-const CustomButton = (props) => {
+const CustomButton = ({children}) => {
     return (
         <button className='custom-button'>
-            { props.children }
+            { children }
         </button>
     )
 }
