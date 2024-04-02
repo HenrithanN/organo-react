@@ -11,7 +11,6 @@ const CustomForm = (props) => {
         props.cadastrarUsuario({
             nomeValue, cargoValue, imagemValue, timeValue
         })
-        console.log('valorCamposForm', nomeValue, cargoValue, imagemValue, timeValue);
     }
 
     const [ nomeValue, setNome ] = useState('');
@@ -40,7 +39,7 @@ const CustomForm = (props) => {
                 <TextInput 
                     value={imagemValue} 
                     label="Imagem" 
-                    placeholder="Digite o endereço da imagem" 
+                    placeholder="Digite o endereço da imagem ou seu usuário do Github" 
                     changeInput={value => setImagem(value)}
                 />
                 <CustomSelect 
