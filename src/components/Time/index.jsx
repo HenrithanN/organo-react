@@ -2,14 +2,27 @@ import './Time.css';
 import CustomCard from '../CustomCard'
 
 const Time = (props) => {
-    console.log('propsprops', props)
+
     const css = { backgroundColor: props.corSecundaria }
-    
+    const listaUsuarios = props.usuarios
+    const mostrarConteudo = listaUsuarios.length > 0;
     return (
-        <section className='time' style={css}>
-            <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
-            <CustomCard />
-        </section>
+        mostrarConteudo
+        ?
+            <section className='time' style={css}>
+                <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
+                <div className="customForm">
+                { listaUsuarios.map(usuario => 
+                    <CustomCard
+                        nome={usuario.nomeValue} 
+                        cargo={usuario.cargoValue} 
+                        imagem={usuario.imagemValue} 
+                        time={usuario.timeValue} 
+                />)}
+                </div>
+            </section>
+        :
+        ''
     )
 }
 
