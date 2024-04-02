@@ -1,7 +1,7 @@
 import './CustomCard.css';
 
 const CustomCard = (props) => {
-    const ulImagem = props.imagem.includes('http') ? props.imagem : `https://github.com/${props.imagem}.png`
+    const ulImagem = props.imagem.includes('http') ? props.imagem : `https://github.com/${props.imagem}.png`;
     return (
             <div className='customCard'>
                 <div className='cabecalho'>
@@ -12,8 +12,6 @@ const CustomCard = (props) => {
                     <h5>{ props.cargo }</h5>
                 </div>
             </div>
-        :
-            ''
     )
 }
 
