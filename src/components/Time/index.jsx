@@ -14,6 +14,7 @@ const Time = (props) => {
                 <div className="customForm">
                 { listaUsuarios.map(usuario => 
                     <CustomCard
+                        corFundo={props.corPrimaria}
                         nome={usuario.nomeValue} 
                         cargo={usuario.cargoValue} 
                         imagem={usuario.imagemValue} 

@@ -4,7 +4,7 @@ const CustomCard = (props) => {
     const ulImagem = props.imagem.includes('http') ? props.imagem : `https://github.com/${props.imagem}.png`;
     return (
             <div className='customCard'>
-                <div className='cabecalho'>
+                <div className='cabecalho' style={{backgroundColor: props.corFundo}}>
                     <img src={ ulImagem } alt='foto de perfil'/>
                 </div>
                 <div className='rodape'>
