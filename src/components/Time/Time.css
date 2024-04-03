@@ -16,3 +16,10 @@
     margin-top: 32px;
     flex-wrap: wrap;
 }
+
+.inputColor{
+    position: relative;
+    width: 50px;
+    float: right;
+    height: 50px;
+}
