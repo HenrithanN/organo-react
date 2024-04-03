@@ -35,3 +35,17 @@
     color: #212121;
     padding: 0 16px;
 }
+
+.buttonClose{
+    border: none;
+    border-radius: 50%;
+    background-color: #bbbaba;
+    color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    top: 20px;
+    left: 140px;
+    width: 30px;
+    height: 30px;
+    box-shadow: 1px 3px 3px 3px #212121a5;
+}

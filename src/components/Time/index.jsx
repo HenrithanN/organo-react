@@ -1,11 +1,12 @@
 import './Time.css';
 import CustomCard from '../CustomCard'
 
-const Time = ({corPrimaria, corSecundaria, usuarios, nome}) => {
+const Time = ({corPrimaria, corSecundaria, usuarios, nome, deletarUsuario}) => {
 
     const css = { backgroundColor: corSecundaria }
     const listaUsuarios = usuarios
     const mostrarConteudo = listaUsuarios.length > 0;
+
     return (
         mostrarConteudo
         ?
@@ -20,6 +21,7 @@ const Time = ({corPrimaria, corSecundaria, usuarios, nome}) => {
                         imagem={usuario.imagemValue} 
                         time={usuario.timeValue} 
                         key={usuario.nomeValue + listaUsuarios.length}
+                        deleteCard={deletarUsuario}
                 />)}
                 </div>
             </section>

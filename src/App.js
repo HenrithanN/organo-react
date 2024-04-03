@@ -20,6 +20,10 @@ function App() {
     setUsuarios([...usuariosValue, usuario]);
   }
 
+  const deletarUsuario = (usuario) => {
+    console.log('deletarUsuariodeletarUsuariodeletarUsuario', usuario)
+  }
+
   return (
     <div>
       <Banner />
@@ -31,6 +35,7 @@ function App() {
           corSecundaria={time.corSecundaria}
           key={time.key}
           usuarios={usuariosValue.filter(usuario => usuario.timeValue === time.key)}
+          deletarUsuario={deletarUsuario}
           >
         </Time>) 
       }
