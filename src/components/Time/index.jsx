@@ -20,14 +20,11 @@ const Time = ({corPrimaria, corSecundaria, usuarios, nome, deletarUsuario, mudaC
                 <input type="color" className='inputColor' value={corPrimaria} onChange={mudaCor}/>
                 <h3 style={{ borderColor: corPrimaria }}>{nome}</h3>
                 <div className="customForm">
-                { listaUsuarios.map(usuario => 
+                { listaUsuarios.map((usuario, index) => 
                     <CustomCard
                         corFundo={corPrimaria}
-                        nome={usuario.nomeValue} 
-                        cargo={usuario.cargoValue} 
-                        imagem={usuario.imagemValue} 
-                        time={usuario.timeValue} 
-                        key={id}
+                        usuario={usuario} 
+                        key={index}
                         deleteCard={deletarUsuario}
                 />)}
                 </div>

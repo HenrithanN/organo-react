@@ -3,13 +3,15 @@ import TextInput from '../TextInput';
 import CustomSelect from '../CustomSelect';
 import CustomButton from '../CustomButton';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const CustomForm = ({cadastrarUsuario, arrayTimes}) => {
 
     const onSubmitForm = (event) => {
         event.preventDefault();
+        const idUsuario = uuidv4();
         cadastrarUsuario({
-            nomeValue, cargoValue, imagemValue, timeValue
+            nomeValue, cargoValue, imagemValue, timeValue, idUsuario
         });
 
         limparCamposFormulario();

@@ -31,8 +31,9 @@ function App() {
     setUsuarios([...usuariosValue, usuario]);
   }
 
-  const deletarUsuario = (usuario) => {
-    console.log('deletarUsuariodeletarUsuariodeletarUsuario', usuario)
+  const deletarUsuario = (usuarioSelecionado) => {
+    const usuariosFiltrados = usuariosValue.filter(usuario => usuario.idUsuario !== usuarioSelecionado.idUsuario);
+    setUsuarios(usuariosFiltrados);
   }
 
   return (
@@ -45,6 +46,7 @@ function App() {
           corPrimaria={time.corPrimaria}
           corSecundaria={time.corSecundaria}
           key={time.id}
+          id={time.id}
           usuarios={usuariosValue.filter(usuario => usuario.timeValue === time.id)}
           deletarUsuario={deletarUsuario}
           mudaCorTime={mudarCorTime}
