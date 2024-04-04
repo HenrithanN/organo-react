@@ -3,7 +3,7 @@ import CustomCard from '../CustomCard'
 
 const Time = ({corPrimaria, corSecundaria, usuarios, nome, deletarUsuario, mudaCorTime}) => {
 
-    const css = { backgroundColor: corSecundaria }
+    const css = { backgroundColor: corSecundaria, backgroundImage: 'url(/imgs/fundo.png)'  }
     const listaUsuarios = usuarios
     const mostrarConteudo = listaUsuarios.length > 0;
 
