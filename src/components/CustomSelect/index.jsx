@@ -12,7 +12,7 @@ const CustomSelect = ({value, options, label, changeSelect}) => {
             <select onChange={onSelectChange} value={value}>
                 <option value="" disabled>Selecione</option>
                 {options.map((opcao) => {
-                    return <option value={opcao.key} key={opcao.key}>{ opcao.nome }</option>
+                    return <option value={opcao.id} key={opcao.id}>{ opcao.nome }</option>
                 })}
             </select>
         </div>
