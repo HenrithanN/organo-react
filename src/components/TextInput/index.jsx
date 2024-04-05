@@ -1,6 +1,6 @@
 import './TextInput.css'
 
-const TextInput = ({placeholder, label, value, changeInput}) => {
+const TextInput = ({obrigatorio, placeholder, label, value, changeInput}) => {
 
     const placeholderModificada = `${placeholder}...`;
 
@@ -13,7 +13,7 @@ const TextInput = ({placeholder, label, value, changeInput}) => {
             <label>
                 {label}
             </label>
-            <input value={value} onChange={onKeyUpInput} placeholder={placeholderModificada}/>
+            <input required={obrigatorio} value={value} onChange={onKeyUpInput} placeholder={placeholderModificada}/>
         </div>
     )
 }

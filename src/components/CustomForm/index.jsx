@@ -60,18 +60,21 @@ const CustomForm = ({cadastrarUsuario, cadastrarTime, arrayTimes}) => {
                 <h2>Preencha os dados para criar o card do colaborador</h2>
 
                 <TextInput 
+                    obrigatorio
                     value={nomeValue} 
                     label="Nome" 
                     placeholder="Digite seu nome" 
                     changeInput={value => setNome(value)}
                 />
                 <TextInput 
+                    obrigatorio
                     value={cargoValue} 
                     label="Cargo" 
                     placeholder="Digite seu cargo" 
                     changeInput={value => setCargo(value)}
                 />
                 <TextInput 
+                    obrigatorio 
                     value={imagemValue} 
                     label="Imagem" 
                     placeholder="Digite o endereço da imagem ou seu usuário do Github" 
@@ -87,18 +90,21 @@ const CustomForm = ({cadastrarUsuario, cadastrarTime, arrayTimes}) => {
             </form>
             <form onSubmit={cadastrarNovoTime} style={{marginLeft: '10rem'}}>
                 <TextInput 
+                    obrigatorio 
                     value={nomeTimeValue} 
                     label="Nome do Time" 
                     placeholder="Digite o nome do novo time" 
                     changeInput={value => setNomeTime(value)}
                 />
                 <TextInput 
+                    obrigatorio 
                     value={corPrimariaValue} 
                     label="Nome do Time" 
                     placeholder="Digite o codigo da cor primaria" 
                     changeInput={value => setCorPrimaria(value)}
                 />
                 <TextInput 
+                    obrigatorio 
                     value={corSecundariaValue} 
                     label="Nome do Time" 
                     placeholder="Digite o codigo da cor secundaria" 
