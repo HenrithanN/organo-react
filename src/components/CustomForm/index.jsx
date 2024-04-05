@@ -5,23 +5,43 @@ import CustomButton from '../CustomButton';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const CustomForm = ({cadastrarUsuario, arrayTimes}) => {
+const CustomForm = ({cadastrarUsuario, cadastrarTime, arrayTimes}) => {
 
-    const onSubmitForm = (event) => {
+    const cadastrarNovoUsuario = (event) => {
         event.preventDefault();
         const idUsuario = uuidv4();
         cadastrarUsuario({
             nomeValue, cargoValue, imagemValue, timeValue, idUsuario
         });
 
-        limparCamposFormulario();
+        limparCamposFormularioUsuario();
     }
 
-    const limparCamposFormulario = () => {
+    const cadastrarNovoTime = (event) => {
+        event.preventDefault();
+
+        const objNovoTime = { 
+            idTime: uuidv4(), 
+            nome: nomeTimeValue, 
+            corPrimaria: corPrimariaValue, 
+            corSecundaria: corSecundariaValue
+        }
+
+        cadastrarTime(objNovoTime);
+        limparCamposFormularioTime();
+    }
+
+    const limparCamposFormularioUsuario = () => {
         setNome('');
         setCargo('');
         setImagem('');
         setTime('');
+    }
+
+    const limparCamposFormularioTime = () => {
+        setNomeTime('');
+        setCorPrimaria('');
+        setCorSecundaria('');
     }
 
     const [ nomeValue, setNome ] = useState('');
@@ -29,10 +49,14 @@ const CustomForm = ({cadastrarUsuario, arrayTimes}) => {
     const [ imagemValue, setImagem ] = useState('');
     const [ timeValue, setTime ] = useState('');
 
+    const [ nomeTimeValue, setNomeTime ] = useState('');
+    const [ corPrimariaValue, setCorPrimaria ] = useState('');
+    const [ corSecundariaValue, setCorSecundaria ] = useState('');
+
 
     return (
         <section className='custom-form'>
-            <form onSubmit={onSubmitForm}>        
+            <form onSubmit={cadastrarNovoUsuario}>        
                 <h2>Preencha os dados para criar o card do colaborador</h2>
 
                 <TextInput 
@@ -60,6 +84,28 @@ const CustomForm = ({cadastrarUsuario, arrayTimes}) => {
                     changeSelect={value => setTime(value)}
                 />
                 <CustomButton> Criar card </CustomButton>
+            </form>
+            <form onSubmit={cadastrarNovoTime} style={{marginLeft: '10rem'}}>
+                <TextInput 
+                    value={nomeTimeValue} 
+                    label="Nome do Time" 
+                    placeholder="Digite o nome do novo time" 
+                    changeInput={value => setNomeTime(value)}
+                />
+                <TextInput 
+                    value={corPrimariaValue} 
+                    label="Nome do Time" 
+                    placeholder="Digite o codigo da cor primaria" 
+                    changeInput={value => setCorPrimaria(value)}
+                />
+                <TextInput 
+                    value={corSecundariaValue} 
+                    label="Nome do Time" 
+                    placeholder="Digite o codigo da cor secundaria" 
+                    changeInput={value => setCorSecundaria(value)}
+                />
+                <CustomButton> Criar Time </CustomButton>
+
             </form>
         </section>
     )
