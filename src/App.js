@@ -18,13 +18,13 @@ function App() {
   ]);
 
   const [ usuariosValue, setUsuarios ] = useState([
-      { idUsuario: uuidv4(), nomeValue: 'JONATHAN HENRIQUE RIBEIRO LIMA', cargoValue: 'Analista', imagemValue: 'henrithanN', timeValue: arrayTimes[0].idTime},
-      { idUsuario: uuidv4(), nomeValue: 'JONATHAN HENRIQUE RIBEIRO LIMA', cargoValue: 'Analista', imagemValue: 'henrithanN', timeValue: arrayTimes[1].idTime},
-      { idUsuario: uuidv4(), nomeValue: 'JONATHAN HENRIQUE RIBEIRO LIMA', cargoValue: 'Analista', imagemValue: 'henrithanN', timeValue: arrayTimes[2].idTime},
-      { idUsuario: uuidv4(), nomeValue: 'JONATHAN HENRIQUE RIBEIRO LIMA', cargoValue: 'Analista', imagemValue: 'henrithanN', timeValue: arrayTimes[3].idTime},
-      { idUsuario: uuidv4(), nomeValue: 'JONATHAN HENRIQUE RIBEIRO LIMA', cargoValue: 'Analista', imagemValue: 'henrithanN', timeValue: arrayTimes[4].idTime},
-      { idUsuario: uuidv4(), nomeValue: 'JONATHAN HENRIQUE RIBEIRO LIMA', cargoValue: 'Analista', imagemValue: 'henrithanN', timeValue: arrayTimes[5].idTime},
-      { idUsuario: uuidv4(), nomeValue: 'JONATHAN HENRIQUE RIBEIRO LIMA', cargoValue: 'Analista', imagemValue: 'henrithanN', timeValue: arrayTimes[6].idTime},
+      { idUsuario: uuidv4(), favorito:false, nomeValue: 'JONATHAN HENRIQUE RIBEIRO LIMA', cargoValue: 'Analista', imagemValue: 'henrithanN', timeValue: arrayTimes[0].idTime},
+      { idUsuario: uuidv4(), favorito:false, nomeValue: 'JONATHAN HENRIQUE RIBEIRO LIMA', cargoValue: 'Analista', imagemValue: 'henrithanN', timeValue: arrayTimes[1].idTime},
+      { idUsuario: uuidv4(), favorito:false, nomeValue: 'JONATHAN HENRIQUE RIBEIRO LIMA', cargoValue: 'Analista', imagemValue: 'henrithanN', timeValue: arrayTimes[2].idTime},
+      { idUsuario: uuidv4(), favorito:false, nomeValue: 'JONATHAN HENRIQUE RIBEIRO LIMA', cargoValue: 'Analista', imagemValue: 'henrithanN', timeValue: arrayTimes[3].idTime},
+      { idUsuario: uuidv4(), favorito:false, nomeValue: 'JONATHAN HENRIQUE RIBEIRO LIMA', cargoValue: 'Analista', imagemValue: 'henrithanN', timeValue: arrayTimes[4].idTime},
+      { idUsuario: uuidv4(), favorito:false, nomeValue: 'JONATHAN HENRIQUE RIBEIRO LIMA', cargoValue: 'Analista', imagemValue: 'henrithanN', timeValue: arrayTimes[5].idTime},
+      { idUsuario: uuidv4(), favorito:false, nomeValue: 'JONATHAN HENRIQUE RIBEIRO LIMA', cargoValue: 'Analista', imagemValue: 'henrithanN', timeValue: arrayTimes[6].idTime},
   ]);
 
 
@@ -50,6 +50,17 @@ function App() {
     setUsuarios(usuariosFiltrados);
   }
 
+  const favoritarCard = (usuarioSelecionado) => {
+    const usuariosModificados = usuariosValue.map((usuario) => {
+      if(usuario.idUsuario === usuarioSelecionado.idUsuario){
+        usuario.favorito = !usuario.favorito;
+      }
+      return usuario;
+    })
+    
+    setUsuarios(usuariosModificados);
+  }
+
   return (
     <div>
       <Banner />
@@ -68,6 +79,7 @@ function App() {
           usuarios={usuariosValue.filter(usuario => usuario.timeValue === time.idTime)}
           deletarUsuario={deletarUsuario}
           mudaCorTime={mudarCorTime}
+          favoritarCard={favoritarCard}
           >
         </Time>) 
       }

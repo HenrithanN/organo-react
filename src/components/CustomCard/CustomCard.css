@@ -49,3 +49,7 @@
     height: 30px;
     box-shadow: 1px 3px 3px 3px #212121a5;
 }
+
+.favButton{
+    cursor: pointer;
+}

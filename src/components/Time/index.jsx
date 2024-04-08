@@ -1,7 +1,7 @@
 import './Time.css';
 import CustomCard from '../CustomCard'
 
-const Time = ({corPrimaria, corSecundaria, usuarios, nome, deletarUsuario, mudaCorTime, idTime}) => {
+const Time = ({corPrimaria, corSecundaria, usuarios, nome, deletarUsuario, favoritarCard, mudaCorTime, idTime}) => {
 
     const css = { backgroundColor: corSecundaria, backgroundImage: 'url(/imgs/fundo.png)'  }
     const listaUsuarios = usuarios
@@ -11,6 +11,7 @@ const Time = ({corPrimaria, corSecundaria, usuarios, nome, deletarUsuario, mudaC
         const corSelecionada = event.target.value;
         mudaCorTime(corSelecionada, idTime);
     }
+
     
     return (
         mostrarConteudo
@@ -26,6 +27,7 @@ const Time = ({corPrimaria, corSecundaria, usuarios, nome, deletarUsuario, mudaC
                         usuario={usuario} 
                         key={index}
                         deleteCard={deletarUsuario}
+                        favoritarCard={favoritarCard}
                 />)}
                 </div>
             </section>

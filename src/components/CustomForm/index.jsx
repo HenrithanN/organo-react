@@ -10,8 +10,10 @@ const CustomForm = ({cadastrarUsuario, cadastrarTime, arrayTimes}) => {
     const cadastrarNovoUsuario = (event) => {
         event.preventDefault();
         const idUsuario = uuidv4();
+        const favorito = false;
+        
         cadastrarUsuario({
-            nomeValue, cargoValue, imagemValue, timeValue, idUsuario
+            nomeValue, cargoValue, imagemValue, timeValue, idUsuario, favorito
         });
 
         limparCamposFormularioUsuario();
