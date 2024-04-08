@@ -88,7 +88,9 @@ const CustomForm = ({cadastrarUsuario, cadastrarTime, arrayTimes}) => {
                 />
                 <CustomButton> Criar card </CustomButton>
             </form>
-            <form onSubmit={cadastrarNovoTime} style={{marginLeft: '10rem'}}>
+            <form onSubmit={cadastrarNovoTime}>
+            <h2>Preencha os dados para criar um novo time</h2>
+
                 <TextInput 
                     obrigatorio 
                     value={nomeTimeValue} 
@@ -99,14 +101,15 @@ const CustomForm = ({cadastrarUsuario, cadastrarTime, arrayTimes}) => {
                 <TextInput 
                     obrigatorio 
                     value={corPrimariaValue} 
-                    label="Nome do Time" 
+                    label="Cor primária do Time" 
                     placeholder="Digite o codigo da cor primaria" 
                     changeInput={value => setCorPrimaria(value)}
                 />
+
                 <TextInput 
                     obrigatorio 
                     value={corSecundariaValue} 
-                    label="Nome do Time" 
+                    label="Cor secundária do Time" 
                     placeholder="Digite o codigo da cor secundaria" 
                     changeInput={value => setCorSecundaria(value)}
                 />
