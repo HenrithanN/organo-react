@@ -1,14 +1,14 @@
-.text-input {
+.custom-input {
     margin: 24px 0;
 }
 
-.text-input label {
+.custom-input label {
     display: block;
     margin-bottom: 8px;
     font-size: 24px;
 }
 
-.text-input input {
+.custom-input input {
     background-color: #FFF;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
     width: 100%;
@@ -16,4 +16,9 @@
     font-size: 24px;
     padding: 24px;
     box-sizing: border-box;
+}
+
+.color-input input {
+    padding: 5px;
+    height: 40px;
 }

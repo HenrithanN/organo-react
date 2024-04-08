@@ -1,5 +1,5 @@
 import './CustomForm.css';
-import TextInput from '../TextInput';
+import CustomInput from '../CustomInput';
 import CustomSelect from '../CustomSelect';
 import CustomButton from '../CustomButton';
 import { useState } from 'react';
@@ -59,21 +59,21 @@ const CustomForm = ({cadastrarUsuario, cadastrarTime, arrayTimes}) => {
             <form onSubmit={cadastrarNovoUsuario}>        
                 <h2>Preencha os dados para criar o card do colaborador</h2>
 
-                <TextInput 
+                <CustomInput 
                     obrigatorio
                     value={nomeValue} 
                     label="Nome" 
                     placeholder="Digite seu nome" 
                     changeInput={value => setNome(value)}
                 />
-                <TextInput 
+                <CustomInput 
                     obrigatorio
                     value={cargoValue} 
                     label="Cargo" 
                     placeholder="Digite seu cargo" 
                     changeInput={value => setCargo(value)}
                 />
-                <TextInput 
+                <CustomInput 
                     obrigatorio 
                     value={imagemValue} 
                     label="Imagem" 
@@ -91,26 +91,23 @@ const CustomForm = ({cadastrarUsuario, cadastrarTime, arrayTimes}) => {
             <form onSubmit={cadastrarNovoTime}>
             <h2>Preencha os dados para criar um novo time</h2>
 
-                <TextInput 
+                <CustomInput 
                     obrigatorio 
                     value={nomeTimeValue} 
                     label="Nome do Time" 
                     placeholder="Digite o nome do novo time" 
                     changeInput={value => setNomeTime(value)}
                 />
-                <TextInput 
-                    obrigatorio 
-                    value={corPrimariaValue} 
-                    label="Cor primária do Time" 
-                    placeholder="Digite o codigo da cor primaria" 
+                <CustomInput
+                    value={corPrimariaValue}
+                    type='color'
+                    label="Selecione a Cor Primária do Time"
                     changeInput={value => setCorPrimaria(value)}
                 />
-
-                <TextInput 
-                    obrigatorio 
-                    value={corSecundariaValue} 
-                    label="Cor secundária do Time" 
-                    placeholder="Digite o codigo da cor secundaria" 
+                <CustomInput
+                    value={corSecundariaValue}
+                    type='color'
+                    label="Selecione a Cor secundária do Time"
                     changeInput={value => setCorSecundaria(value)}
                 />
                 <CustomButton> Criar Time </CustomButton>
