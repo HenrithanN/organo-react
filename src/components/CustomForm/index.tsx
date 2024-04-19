@@ -2,12 +2,18 @@ import './CustomForm.css';
 import CustomInput from '../CustomInput';
 import CustomSelect from '../CustomSelect';
 import CustomButton from '../CustomButton';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { ITime } from '../../shared/interfaces/ITimes';
 
-const CustomForm = ({cadastrarUsuario, cadastrarTime, arrayTimes}) => {
+interface CustomFormProps {
+    cadastrarUsuario: (value: any) => void,  
+    cadastrarTime: (time: ITime) => void, 
+    arrayTimes: ITime[]
+}
+const CustomForm = ({cadastrarUsuario, cadastrarTime, arrayTimes}: CustomFormProps) => {
 
-    const cadastrarNovoUsuario = (event) => {
+    const cadastrarNovoUsuario = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const idUsuario = uuidv4();
         const favorito = false;
@@ -19,7 +25,7 @@ const CustomForm = ({cadastrarUsuario, cadastrarTime, arrayTimes}) => {
         limparCamposFormularioUsuario();
     }
 
-    const cadastrarNovoTime = (event) => {
+    const cadastrarNovoTime = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         const objNovoTime = { 

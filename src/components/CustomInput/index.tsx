@@ -1,9 +1,9 @@
 import './CustomInput.css'
 
 interface CustomInputProps {
-    obrigatorio: boolean, 
-    type: string, 
-    placeholder: string, 
+    obrigatorio?: boolean, 
+    type?: string, 
+    placeholder?: string, 
     label: string, 
     value: string, 
     changeInput: (valor: string) => void
