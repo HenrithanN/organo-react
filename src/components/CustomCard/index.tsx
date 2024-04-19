@@ -1,9 +1,17 @@
+import { IUsuario } from '../../shared/interfaces/IUsuario';
 import './CustomCard.css';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 
-const CustomCard = ({usuario, corFundo, deleteCard, favoritarCard}) => {
-    const { cargoValue, imagemValue, nomeValue, favorito } = usuario;
-    const ulImagem = imagemValue.includes('http') ? imagemValue : `https://github.com/${imagemValue}.png`;
+interface CustomCardProps {
+    usuario: IUsuario, 
+    corFundo: string, 
+    deleteCard: (usuario: IUsuario) => void, 
+    favoritarCard: (usuario: IUsuario) => void
+}
+
+const CustomCard = ({usuario, corFundo, deleteCard, favoritarCard}: CustomCardProps) => {
+    const { cargo, imagem, nome, favorito } = usuario;
+    const ulImagem = imagem.includes('http') ? imagem : `https://github.com/${imagem}.png`;
 
     const favoritar = () => {
         favoritarCard(usuario);
@@ -22,8 +30,8 @@ const CustomCard = ({usuario, corFundo, deleteCard, favoritarCard}) => {
                     <img src={ ulImagem } alt='foto de perfil'/>
                 </div>
                 <div className='rodape'>
-                    <h4>{ nomeValue }</h4>
-                    <h5>{ cargoValue }</h5>
+                    <h4>{ nome }</h4>
+                    <h5>{ cargo }</h5>
                     <div>
                         {
                             favorito

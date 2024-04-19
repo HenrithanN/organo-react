@@ -1,13 +1,26 @@
 import './Time.css';
 import CustomCard from '../CustomCard'
+import { IUsuario } from '../../shared/interfaces/IUsuario';
 
-const Time = ({corPrimaria, corSecundaria, usuarios, nome, deletarUsuario, favoritarCard, mudaCorTime, idTime}) => {
+
+interface TimeProps {
+    corPrimaria: string, 
+    corSecundaria: string, 
+    usuarios: IUsuario[], 
+    nome: string, 
+    deletarUsuario: ()=> void, 
+    favoritarCard: ()=> void, 
+    mudaCorTime: (corSelecionada: string, idTime: number)=> void, 
+    idTime: number
+}
+
+const Time = ({corPrimaria, corSecundaria, usuarios, nome, deletarUsuario, favoritarCard, mudaCorTime, idTime}: TimeProps) => {
 
     const css = { backgroundColor: corSecundaria, backgroundImage: 'url(/imgs/fundo.png)'  }
     const listaUsuarios = usuarios
     const mostrarConteudo = listaUsuarios.length > 0;
 
-    const mudaCor = (event) => {
+    const mudaCor = (event: any) => {
         const corSelecionada = event.target.value;
         mudaCorTime(corSelecionada, idTime);
     }
