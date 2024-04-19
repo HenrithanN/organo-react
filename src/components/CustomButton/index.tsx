@@ -1,6 +1,10 @@
+import React, { ReactElement } from 'react';
 import './CustomButton.css';
 
-const CustomButton = ({children}) => {
+interface CustomButtonProps {
+    children: ReactElement
+}
+const CustomButton = ({children} : CustomButtonProps) => {
     return (
         <button className='custom-button'>
             { children }
