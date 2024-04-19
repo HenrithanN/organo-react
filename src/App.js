@@ -63,7 +63,7 @@ function App() {
 
   return (
     <div>
-      <Banner />
+      <Banner url="/imgs/banner.png" descricao="O banner principal da página."/>
       <CustomForm 
         arrayTimes={arrayTimes} 
         cadastrarUsuario={usuario => cadastrarUsuario(usuario)} 
