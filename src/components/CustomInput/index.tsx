@@ -1,6 +1,15 @@
 import './CustomInput.css'
 
-const CustomInput = ({obrigatorio, type = 'text', placeholder, label, value, changeInput}) => {
+interface CustomInputProps {
+    obrigatorio: boolean, 
+    type: string, 
+    placeholder: string, 
+    label: string, 
+    value: string, 
+    changeInput: (valor: string) => void
+}
+
+const CustomInput = ({obrigatorio, type = 'text', placeholder, label, value, changeInput}: CustomInputProps) => {
 
     return (
         <div className={`custom-input ${type}-input`}>
