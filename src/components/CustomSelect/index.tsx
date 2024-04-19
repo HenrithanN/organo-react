@@ -1,8 +1,16 @@
+import { ITime } from '../../shared/interfaces/ITimes';
 import './CustomSelect.css';
 
-const CustomSelect = ({value, options, label, changeSelect}) => {
+interface CustomSelectProps {
+    value: string, 
+    options: ITime[], 
+    label: string, 
+    changeSelect: (value: any) => void
+}
 
-    const onSelectChange = (event) => {
+const CustomSelect = ({value, options, label, changeSelect}: CustomSelectProps) => {
+
+    const onSelectChange = (event: any) => {
         changeSelect(event.currentTarget.value);
     }
 
