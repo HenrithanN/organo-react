@@ -8,10 +8,10 @@ interface TimeProps {
     corSecundaria: string, 
     usuarios: IUsuario[], 
     nome: string, 
-    deletarUsuario: ()=> void, 
-    favoritarCard: ()=> void, 
-    mudaCorTime: (corSelecionada: string, idTime: number)=> void, 
-    idTime: number
+    deletarUsuario: (usuario: IUsuario)=> void, 
+    favoritarCard: (usuario: IUsuario)=> void, 
+    mudaCorTime: (corSelecionada: string, idTime: string)=> void, 
+    idTime: string
 }
 
 const Time = ({corPrimaria, corSecundaria, usuarios, nome, deletarUsuario, favoritarCard, mudaCorTime, idTime}: TimeProps) => {
@@ -45,7 +45,7 @@ const Time = ({corPrimaria, corSecundaria, usuarios, nome, deletarUsuario, favor
                 </div>
             </section>
         :
-        ''
+        <></>
     )
 }
 

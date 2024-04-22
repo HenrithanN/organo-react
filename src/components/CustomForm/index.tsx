@@ -5,6 +5,7 @@ import CustomButton from '../CustomButton';
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { ITime } from '../../shared/interfaces/ITimes';
+import { IUsuario } from '../../shared/interfaces/IUsuario';
 
 interface CustomFormProps {
     cadastrarUsuario: (value: any) => void,  
@@ -18,9 +19,15 @@ const CustomForm = ({cadastrarUsuario, cadastrarTime, arrayTimes}: CustomFormPro
         const idUsuario = uuidv4();
         const favorito = false;
         
-        cadastrarUsuario({
-            nomeValue, cargoValue, imagemValue, timeValue, idUsuario, favorito
-        });
+        const objNovoUsuario: IUsuario = {
+            nome: nomeValue,
+            cargo: cargoValue,
+            imagem: imagemValue,
+            favorito: favorito,
+            idTime: timeValue,
+            idUsuario: idUsuario
+        }
+        cadastrarUsuario(objNovoUsuario);
 
         limparCamposFormularioUsuario();
     }
